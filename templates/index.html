@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PackSmart – Intelligent Packing Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar no-print">
+    <div class="topbar-inner">
+      <div class="brand">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M4 13h16"/></svg>
+        <div><strong>PackSmart</strong><span>Intelligent Packing Assistant</span></div>
+      </div>
+      <div class="topbar-actions">
+        <button type="button" id="btn-sample" class="btn ghost">Load sample data</button>
+        <button type="button" id="btn-clear" class="btn ghost danger">Clear all</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="errors" class="errors no-print" role="alert" hidden></div>
+
+    <section class="kpis no-print" aria-label="Trip overview">
+      <div class="kpi"><small>Luggage limit</small><strong id="k-limit">–</strong></div>
+      <div class="kpi"><small>Items</small><strong id="k-items">0</strong></div>
+      <div class="kpi"><small>Total item weight</small><strong id="k-weight">0 kg</strong></div>
+      <div class="kpi"><small>Essentials weight</small><strong id="k-ess">0 kg</strong></div>
+    </section>
+
+    <div class="stack no-print">
+      <section class="card" aria-labelledby="h-trip">
+        <div class="card-head"><h2 id="h-trip">Trip details</h2><p>Name your trip and set the weight allowance.</p></div>
+        <form id="trip-form" class="form-row trip" novalidate>
+          <label>Trip name <input id="trip-name" maxlength="60" placeholder="e.g. Weekend in Goa" required></label>
+          <label>Luggage limit (kg) <input id="trip-limit" type="number" step="0.1" min="0.5" max="100" placeholder="15" required></label>
+          <button class="btn primary">Save trip</button>
+        </form>
+      </section>
+
+      <section class="card" aria-labelledby="h-add">
+        <div class="card-head"><h2 id="h-add">Add an item</h2><p>Priority 10 means you really want it; 1 means nice to have. To change an item later, use Edit in the table below.</p></div>
+        <form id="item-form" class="form-row item" novalidate>
+          <label>Name <input id="i-name" maxlength="60" placeholder="e.g. Rain jacket" required></label>
+          <label>Weight (kg) <input id="i-weight" type="number" step="0.01" min="0.001" placeholder="0.5" required></label>
+          <label>Priority (1–10) <input id="i-priority" type="number" min="1" max="10" step="1" value="5" required></label>
+          <label>Category <select id="i-category"></select></label>
+          <label class="check"><input id="i-essential" type="checkbox"> Essential</label>
+          <button class="btn primary" id="i-submit">Add item</button>
+        </form>
+      </section>
+    </div>
+
+    <section class="card no-print" aria-labelledby="h-items">
+      <div class="card-head row-head">
+        <div><h2 id="h-items">Items</h2><p id="summary" class="hint"></p></div>
+        <button id="btn-optimize" class="btn primary large">Generate packing list</button>
+      </div>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Name</th><th class="num">Weight</th><th>Category</th><th>Priority</th><th>Status</th><th class="num">Actions</th></tr></thead>
+          <tbody id="items-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="results" hidden>
+      <div class="result-head">
+        <div><h2 id="r-title"></h2><p class="hint no-print">Optimized with CSP and backtracking search</p></div>
+        <div class="no-print actions">
+          <button id="btn-download" class="btn">Download .txt</button>
+          <button id="btn-print" class="btn">Print</button>
+        </div>
+      </div>
+      <div id="r-body"></div>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
