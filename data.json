@@ -1,0 +1,169 @@
+{
+  "trip": {
+    "name": "5-day Munnar getaway",
+    "limit": 8.0
+  },
+  "items": [
+    {
+      "id": 1,
+      "name": "Passport / ID",
+      "weight": 0.1,
+      "category": "Documents",
+      "priority": 10,
+      "essential": true
+    },
+    {
+      "id": 2,
+      "name": "Medicines",
+      "weight": 0.4,
+      "category": "Health",
+      "priority": 10,
+      "essential": true
+    },
+    {
+      "id": 3,
+      "name": "Toiletry kit",
+      "weight": 0.8,
+      "category": "Toiletries",
+      "priority": 9,
+      "essential": true
+    },
+    {
+      "id": 4,
+      "name": "Phone charger",
+      "weight": 0.2,
+      "category": "Electronics",
+      "priority": 9,
+      "essential": true
+    },
+    {
+      "id": 5,
+      "name": "Rain jacket",
+      "weight": 0.8,
+      "category": "Clothing",
+      "priority": 8,
+      "essential": false
+    },
+    {
+      "id": 6,
+      "name": "T-shirts (3)",
+      "weight": 0.6,
+      "category": "Clothing",
+      "priority": 7,
+      "essential": false
+    },
+    {
+      "id": 7,
+      "name": "Sneakers",
+      "weight": 1.1,
+      "category": "Footwear",
+      "priority": 7,
+      "essential": false
+    },
+    {
+      "id": 8,
+      "name": "Camera",
+      "weight": 0.9,
+      "category": "Electronics",
+      "priority": 7,
+      "essential": false
+    },
+    {
+      "id": 9,
+      "name": "Power bank",
+      "weight": 0.4,
+      "category": "Electronics",
+      "priority": 7,
+      "essential": false
+    },
+    {
+      "id": 10,
+      "name": "Sweater",
+      "weight": 0.9,
+      "category": "Clothing",
+      "priority": 6,
+      "essential": false
+    },
+    {
+      "id": 11,
+      "name": "Laptop",
+      "weight": 1.8,
+      "category": "Electronics",
+      "priority": 6,
+      "essential": false
+    },
+    {
+      "id": 12,
+      "name": "Umbrella",
+      "weight": 0.5,
+      "category": "Miscellaneous",
+      "priority": 6,
+      "essential": false
+    },
+    {
+      "id": 13,
+      "name": "Jeans",
+      "weight": 0.7,
+      "category": "Clothing",
+      "priority": 5,
+      "essential": false
+    },
+    {
+      "id": 14,
+      "name": "Water bottle",
+      "weight": 0.3,
+      "category": "Miscellaneous",
+      "priority": 5,
+      "essential": false
+    },
+    {
+      "id": 15,
+      "name": "Sandals",
+      "weight": 0.5,
+      "category": "Footwear",
+      "priority": 4,
+      "essential": false
+    },
+    {
+      "id": 16,
+      "name": "Towel",
+      "weight": 0.6,
+      "category": "Toiletries",
+      "priority": 4,
+      "essential": false
+    },
+    {
+      "id": 17,
+      "name": "Formal outfit",
+      "weight": 1.2,
+      "category": "Clothing",
+      "priority": 3,
+      "essential": false
+    },
+    {
+      "id": 18,
+      "name": "Paperback book",
+      "weight": 0.4,
+      "category": "Miscellaneous",
+      "priority": 3,
+      "essential": false
+    },
+    {
+      "id": 19,
+      "name": "Binoculars",
+      "weight": 0.6,
+      "category": "Miscellaneous",
+      "priority": 3,
+      "essential": false
+    },
+    {
+      "id": 20,
+      "name": "Hair dryer",
+      "weight": 0.7,
+      "category": "Toiletries",
+      "priority": 2,
+      "essential": false
+    }
+  ],
+  "next_id": 21
+}
